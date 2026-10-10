@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+hmmlearn
+shap
+yfinance
+requests
+lxml
+xlrd
