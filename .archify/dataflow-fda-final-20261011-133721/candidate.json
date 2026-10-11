@@ -1,0 +1,423 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "FDA Final: S&P 500 Bubble & Crisis Early-Warning Pipeline",
+    "output": ".archify/dataflow-fda-final-20261011-133721/fda-final.html",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/ployphukv67/FDA_Project",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "1a69be61770b32cb7af67cfa9ecf5e12ce374990"
+    },
+    "viewBox": [
+      1080,
+      680
+    ]
+  },
+  "stages": [
+    {
+      "label": "Sources"
+    },
+    {
+      "label": "Prepare"
+    },
+    {
+      "label": "Detect & predict"
+    },
+    {
+      "label": "Evaluate"
+    },
+    {
+      "label": "Output"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "french",
+      "type": "external",
+      "label": "Ken French Library",
+      "sublabel": "48 industries",
+      "stage": 0,
+      "row": 2,
+      "tag": "monthly + daily",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 144,
+          "end_line": 225,
+          "label": "load_french"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "yahoo",
+      "type": "external",
+      "label": "Yahoo Finance",
+      "sublabel": "S&P 500 close, VIX",
+      "stage": 0,
+      "row": 0,
+      "tag": "daily",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 226,
+          "end_line": 257,
+          "label": "yf_close"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "fred",
+      "type": "external",
+      "label": "FRED + Shiller",
+      "sublabel": "rates, spreads, CAPE",
+      "stage": 0,
+      "row": 3,
+      "tag": "macro",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 258,
+          "end_line": 300,
+          "label": "load_fred / load_cape"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "sectors",
+      "type": "backend",
+      "label": "Sector Panel",
+      "sublabel": "48 → 11 GICS sectors",
+      "stage": 1,
+      "row": 2,
+      "tag": "GICS_MAP",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 301,
+          "end_line": 330,
+          "label": "GICS_MAP"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "features",
+      "type": "database",
+      "label": "Features & Labels",
+      "sublabel": "Crash_H: ≥40% drop in H",
+      "stage": 1,
+      "row": 3,
+      "tag": "H = 6/12/24",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 772,
+          "end_line": 780,
+          "label": "crash_label"
+        },
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 833,
+          "end_line": 870,
+          "label": "features"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "gsadf",
+      "type": "backend",
+      "label": "L1 · GSADF",
+      "sublabel": "PSY bubble flags",
+      "stage": 2,
+      "row": 1,
+      "tag": "wild bootstrap",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 368,
+          "end_line": 400,
+          "label": "run_psy"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "hmm",
+      "type": "backend",
+      "label": "L2 · HMM",
+      "sublabel": "Calm / Volatile / Crisis",
+      "stage": 2,
+      "row": 0,
+      "tag": "filtered prob",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 520,
+          "end_line": 540,
+          "label": "fit_hmm / hmm_filter"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "wf",
+      "type": "backend",
+      "label": "L3 · Walk-forward",
+      "sublabel": "Logit (main) vs RF",
+      "stage": 2,
+      "row": 3,
+      "tag": "yearly refit 1960+",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 914,
+          "end_line": 926,
+          "label": "MODEL_SPECS"
+        },
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 938,
+          "end_line": 975,
+          "label": "run_walk_forward"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "eval",
+      "type": "security",
+      "label": "Evaluation",
+      "sublabel": "AUC, PR-AUC, SHAP",
+      "stage": 3,
+      "row": 3,
+      "tag": "2020 / 2022 tests",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 1010,
+          "end_line": 1060,
+          "label": "evaluate"
+        },
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 1213,
+          "end_line": 1240,
+          "label": "2020 / 2022 test"
+        },
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 1313,
+          "end_line": 1340,
+          "label": "SHAP"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    },
+    {
+      "id": "breadth",
+      "type": "frontend",
+      "label": "Bubble Breadth",
+      "sublabel": "cap-weighted S&P 500",
+      "stage": 4,
+      "row": 1,
+      "tag": "Part 9",
+      "sources": [
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 1260,
+          "end_line": 1275,
+          "label": "breadth_series"
+        },
+        {
+          "path": "FDA_Project_Final.ipynb",
+          "line": 1384,
+          "end_line": 1395,
+          "label": "Part 9"
+        }
+      ],
+      "width": 120,
+      "height": 72
+    }
+  ],
+  "flows": [
+    {
+      "id": "f-ind",
+      "from": "french",
+      "to": "sectors",
+      "label": "industry returns",
+      "variant": "emphasis",
+      "route": "straight"
+    },
+    {
+      "id": "f-spx-hmm",
+      "from": "yahoo",
+      "to": "hmm",
+      "label": "daily returns + vol",
+      "variant": "default",
+      "route": "straight",
+      "labelAt": [
+        315,
+        164
+      ]
+    },
+    {
+      "id": "f-spx-psy",
+      "from": "yahoo",
+      "to": "gsadf",
+      "label": "S&P 500 price",
+      "variant": "default",
+      "route": "auto",
+      "fromSide": "bottom",
+      "toSide": "left",
+      "via": [
+        [
+          100,
+          278
+        ]
+      ],
+      "labelAt": [
+        315,
+        278
+      ]
+    },
+    {
+      "id": "f-macro",
+      "from": "fred",
+      "to": "features",
+      "label": "macro, lagged 1m",
+      "classification": "ablation only",
+      "variant": "dashed",
+      "route": "straight"
+    },
+    {
+      "id": "f-sec-psy",
+      "from": "sectors",
+      "to": "gsadf",
+      "label": "sector prices",
+      "variant": "emphasis",
+      "route": "auto",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "via": [
+        [
+          530,
+          392
+        ]
+      ],
+      "labelAt": [
+        440,
+        392
+      ]
+    },
+    {
+      "id": "f-sec-feat",
+      "from": "sectors",
+      "to": "features",
+      "label": "run-up, vol, issuance",
+      "variant": "emphasis",
+      "route": "straight",
+      "labelAt": [
+        315,
+        449
+      ]
+    },
+    {
+      "id": "f-train",
+      "from": "features",
+      "to": "wf",
+      "label": "purged train set",
+      "variant": "emphasis",
+      "route": "straight"
+    },
+    {
+      "id": "f-eval",
+      "from": "wf",
+      "to": "eval",
+      "label": "OOS P(bubble)",
+      "variant": "emphasis",
+      "route": "straight"
+    },
+    {
+      "id": "f-pb",
+      "from": "wf",
+      "to": "breadth",
+      "label": "P(bubble) per sector",
+      "variant": "emphasis",
+      "route": "auto",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          530,
+          574
+        ],
+        [
+          960,
+          574
+        ]
+      ],
+      "labelAt": [
+        745,
+        574
+      ]
+    },
+    {
+      "id": "f-psy-share",
+      "from": "gsadf",
+      "to": "breadth",
+      "label": "PSY bubble share",
+      "variant": "default",
+      "route": "straight",
+      "labelAt": [
+        745,
+        278
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Main prediction path",
+      "items": [
+        "Sector-level target: P(sector falls ≥40% within 6/12/24 months), per Greenwood, Shleifer & You (2019)",
+        "Logit is the main model; Random Forest and Logit+Macro are comparisons",
+        "Sector probabilities roll back up into a cap-weighted S&P 500 bubble breadth"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Detection layers stay separate",
+      "items": [
+        "GSADF and HMM are regime / detection layers, not classifier inputs",
+        "HMM picks 2 vs 3 states by BIC and is checked against NBER recessions; VIX is a robustness test",
+        "HMM filtered regime probabilities are used for charts and context in the evaluation and breadth sections"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Leakage controls",
+      "items": [
+        "Expanding-window refit every year from 1960, train starting 1931",
+        "Purge: only labels resolved by the prior year end enter training",
+        "Already-crashed months (≥20% below 12-month peak) are masked"
+      ]
+    }
+  ]
+}
