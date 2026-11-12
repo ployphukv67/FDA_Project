@@ -1,0 +1,11 @@
+﻿,Monthly Risk Report — September 2026
+Data as of,2026-09-30
+Models fitted on data to,2025-12-31
+Volatility regime (HMM),Normal volatility
+"P(High volatility), monthly average",0.0
+Industries with a GSADF flag (explosive price behaviour),1 of 38: Chips
+Industries in a run-up (>= 100%),Hardw
+Industries rated / already falling,31 / 7
+High: confirmed / watch,6 / 2
+Industries whose level changed this month,7
+Largest industry weight in the market,Chips 22.8%

@@ -1,0 +1,39 @@
+﻿Industry,Sector,Risk level,Previous level,High status,Months at High,Historical rate 24M,Sample size,Run-up,GSADF flag,Key drivers,Market weight,Rank
+Autos,Consumer Discretionary,High,High,Confirmed,2,0.221,7402,—,—,Volatility before the run-up (+0.107); Recent volatility (+0.070); Rise in volatility (+0.007),0.0253,1.0
+Hardw,Information Technology,High,High,Confirmed,6,0.221,7402,>= 100%,—,24M return net of market (+0.050); Price acceleration (+0.048); Recent volatility (+0.042),0.0172,0.9677
+ElcEq,Industrials,High,Already falling,Watch,1,0.221,7402,—,—,Recent volatility (+0.083); Volatility before the run-up (+0.018); 24M return net of market (+0.017),0.0033,0.9355
+Mines,Materials,High,High,Confirmed,39,0.221,7402,—,—,Recent volatility (+0.085); Volatility before the run-up (+0.015),0.0054,0.9032
+Chips,Information Technology,High,High,Confirmed,4,0.221,7402,>= 50%,Yes,24M return net of market (+0.033); Price acceleration (+0.019); Growth in number of firms (+0.011),0.2278,0.871
+Cnstr,Industrials,High,High,Confirmed,12,0.221,7402,—,—,Volatility before the run-up (+0.024); Recent volatility (+0.012); Book-to-market (+0.005),0.0061,0.8387
+LabEq,Information Technology,High,Elevated,Watch,1,0.221,7402,—,—,Recent volatility (+0.014),0.0176,0.8065
+Toys,Consumer Discretionary,High,High,Confirmed,2,0.221,7402,—,—,Volatility before the run-up (+0.011); Rise in volatility (+0.006),0.0005,0.7742
+BldMt,Materials,Elevated,High,—,0,0.1262,7038,—,—,Volatility before the run-up (+0.020),0.0043,0.7419
+Oil,Energy,Elevated,Elevated,—,0,0.1262,7038,—,—,Book-to-market (+0.008); Price acceleration (+0.004),0.0319,0.7097
+Agric,Consumer Staples,Elevated,Elevated,—,0,0.1262,7038,—,—,Book-to-market (+0.008); Volatility before the run-up (+0.004),0.0009,0.6774
+Fin,Financials,Elevated,Elevated,—,0,0.1262,7038,—,—,Growth in number of firms (+0.019); Rise in volatility (+0.001),0.0319,0.6452
+Banks,Financials,Elevated,Elevated,—,0,0.1262,7038,—,—,Rise in volatility (+0.009); Book-to-market (+0.009),0.0587,0.6129
+Insur,Financials,Elevated,Elevated,—,0,0.1262,7038,—,—,Growth in number of firms (+0.015); Rise in volatility (+0.004); Book-to-market (+0.001),0.0258,0.5806
+Food,Consumer Staples,Elevated,Elevated,—,0,0.1262,7038,—,—,Book-to-market (+0.009); 24M return net of market (+0.005),0.0046,0.5484
+Chems,Materials,Elevated,Elevated,—,0,0.1262,7038,—,—,Book-to-market (+0.007); Rise in volatility (+0.004),0.0058,0.5161
+Paper,Materials,Normal,Normal,—,0,0.099,7201,—,—,24M return net of market (+0.005); Rise in volatility (+0.000),0.0013,0.4839
+Util,Utilities,Normal,Normal,—,0,0.099,7201,—,—,Growth in number of firms (+0.004); Book-to-market (+0.004),0.025,0.4516
+Telcm,Communication Services,Normal,Normal,—,0,0.099,7201,—,—,Book-to-market (+0.007),0.0156,0.4194
+Beer,Consumer Staples,Normal,Normal,—,0,0.099,7201,—,—,24M return net of market (+0.007),0.004,0.3871
+Hlth,Health Care,Normal,Normal,—,0,0.099,7201,—,—,Book-to-market (+0.005),0.0066,0.3548
+Meals,Consumer Discretionary,Normal,Normal,—,0,0.099,7201,—,—,Book-to-market (+0.006),0.0112,0.3226
+Aero,Industrials,Normal,Normal,—,0,0.099,7201,—,—,Growth in number of firms (+0.001),0.0168,0.2903
+BusSv,Industrials,Normal,Low,—,0,0.099,7201,—,—,—,0.0239,0.2581
+Softw,Information Technology,Low,Low,—,0,0.0733,6861,—,—,—,0.1864,0.2258
+Drugs,Health Care,Low,Low,—,0,0.0733,6861,—,—,—,0.0634,0.1935
+PerSv,Consumer Discretionary,Low,Low,—,0,0.0733,6861,—,—,—,0.0026,0.1613
+Trans,Industrials,Low,Low,—,0,0.0733,6861,—,—,—,0.0172,0.129
+Whlsl,Industrials,Low,Low,—,0,0.0733,6861,—,—,—,0.0105,0.0968
+Hshld,Consumer Staples,Low,Low,—,0,0.0733,6861,—,—,—,0.0091,0.0645
+Rtail,Consumer Discretionary,Low,Low,—,0,0.0733,6861,—,—,—,0.0798,0.0323
+Clths,Consumer Discretionary,Already falling,Already falling,—,0,,,—,—,,0.0021,
+Fun,Communication Services,Already falling,Already falling,—,0,,,—,—,,0.0077,
+Guns,Industrials,Already falling,High,—,0,,,—,—,,0.0032,
+Mach,Industrials,Already falling,Already falling,—,0,,,—,—,,0.0279,
+MedEq,Health Care,Already falling,Normal,—,0,,,—,—,,0.013,
+RlEst,Real Estate,Already falling,High,—,0,,,—,—,,0.0013,
+Steel,Materials,Already falling,Already falling,—,0,,,—,—,,0.0043,

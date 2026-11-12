@@ -1,0 +1,11 @@
+﻿Industry,Weight,Risk level,High status,Run-up
+Softw,0.15,Low,—,—
+Chips,0.15,High,Confirmed,>= 50%
+Banks,0.12,Elevated,—,—
+Drugs,0.12,Low,—,—
+Rtail,0.1,Low,—,—
+Oil,0.08,Elevated,—,—
+Util,0.08,Normal,—,—
+Hardw,0.08,High,Confirmed,>= 100%
+Autos,0.06,High,Confirmed,—
+Insur,0.06,Elevated,—,—

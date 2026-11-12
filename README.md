@@ -9,6 +9,7 @@ Industry Crash-Risk Advisor: monthly industry-level risk monitoring and decision
 | `data/` | Local data snapshot read by the notebook (see `data/README.md`) |
 | `data.zip` | The same data files in one archive, for uploading to Colab |
 | `figures/` | Charts saved by the notebook |
+| `csv/` | Result tables exported by the v6 notebook (monthly risk levels since 1960, latest report, Run-up Watch, summary) |
 
 Run locally: `pip install hmmlearn shap xlrd`, then run the notebook from the repository root.
 
