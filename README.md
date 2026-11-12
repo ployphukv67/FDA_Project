@@ -14,4 +14,4 @@ Run locally: `pip install hmmlearn shap xlrd`, then run the notebook from the re
 
 Run in Colab: open the notebook, drag `data.zip` into the Files panel, then run all cells.
 
-A full run takes about 20 minutes.
+A full run takes about 35 minutes.
