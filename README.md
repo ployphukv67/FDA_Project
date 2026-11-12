@@ -12,6 +12,6 @@ Industry bubble and crash early-warning system for 48 Fama-French industries.
 
 Run locally: `pip install hmmlearn shap xlrd`, then run the notebook from the repository root.
 
-Run in Colab: open the notebook, run all cells, and upload `data.zip` when the data cell (1.1) asks for it.
+Run in Colab: open the notebook, drag `data.zip` into the Files panel, then run all cells.
 
 A full run takes about 20 minutes.
