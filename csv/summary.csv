@@ -1,26 +1,28 @@
 ﻿,Value
-Risk Ranking sample,"1960-01 to 2024-09, 28,502 rated industry-months with a known outcome"
-"Risk Ranking: severe-drawdown rate, Low level","7.3% [3.0%, 10.9%]"
-"Risk Ranking: severe-drawdown rate, High level","22.1% [17.7%, 26.2%]"
-Risk Ranking: rates rise Low to High,100% of bootstrap draws; 3 of 3 periods
-"Ranking skill, XS-AUC (RandomForest)","0.710 [0.682, 0.742]"
+Risk Ranking sample,"1960-01 to 2024-09, 28,503 rated industry-months with a known outcome"
+"Risk Ranking: severe-drawdown rate, Low level","7.4% [3.2%, 11.1%]"
+"Risk Ranking: severe-drawdown rate, High level","22.2% [17.8%, 26.2%]"
+Risk Ranking: rates rise Low to High,99% of bootstrap draws; 3 of 3 periods
+"Ranking skill, XS-AUC (RandomForest)","0.712 [0.683, 0.748]"
 "Ranking skill, XS-AUC (volatility-only benchmark)","0.703 [0.666, 0.742]"
-"ΔXS-AUC, RandomForest − volatility-only","+0.007 [-0.017, +0.040]"
-High level: model − volatility ranking (rate),"-1.1% [-2.4%, +0.6%]"
-High level vs control matched on return and volatility,"22.1% vs 16.0% (diff +6.1% [+2.5%, +10.5%])"
-Level stability: same level next month,74.5%
-"High signal, rule A vs B: events flagged in advance",54.1% vs 47.6%
-"High signal, rule A vs B: false-alarm rate",77.9% vs 76.9%
+"ΔXS-AUC, RandomForest − volatility-only","+0.009 [-0.016, +0.043]"
+Does ML add value over the volatility benchmark?,not shown: the interval of the difference includes 0
+High level: model − volatility ranking (rate),"-1.0% [-2.5%, +0.7%]"
+High level vs control matched on return and volatility,"22.2% vs 14.5% (diff +7.7% [+3.8%, +11.8%])"
+Level stability: same level next month,74.1%
+"High signal, rule A vs B: events flagged in advance",54.4% vs 48.5%
+"High signal, rule A vs B: false-alarm rate",77.8% vs 76.6%
 Run-up Watch (>= 100%): episodes / severe drawdowns,46 / 19
-Run-up Watch (>= 100%): rate per episode,"41.3% [21.3%, 59.2%] vs base rate 11.2%"
+Run-up Watch (>= 100%): rate per episode,"41.3% [21.3%, 59.2%]"
+Run-up Watch (>= 100%): matched control / difference,"16.0% / +25.3% [+9.2%, +39.2%]"
 Run-up Watch (>= 150%): rate per episode,"71.4% [44.4%, 93.8%], 21 episodes"
-"Run-up Watch, out of sample (2015 onwards)","1 of 7 episodes [2.6%, 51.3%]"
+"Run-up Watch, out of sample (2015 onwards)","1 of 7 episodes [2.6%, 51.3%]; matched control 6.3%"
 Run-up Watch: months from signal to price peak (mean),"12.4, return to peak +44%"
-"Timing skill, Time-AUC (RandomForest)","0.516 [0.434, 0.575]"
+"Timing skill, Time-AUC (RandomForest)","0.514 [0.433, 0.576]"
 Stage 1 out-of-sample R² vs base rate,-0.121
 Market-context variables that improve the ranking (FDR 10%),none
-Long–short FF3 alpha per year (RandomForest),-3.7% (t = -2.30)
-Removing High level (cap-weighted): exposure,"9.9% to 8.5% (Δ -1.5% [-2.7%, -0.5%])"
-Removing High level (cap-weighted): return per year,"-0.81% [-1.47%, -0.06%]"
-Removing High level (cap-weighted): max drawdown vs control,-51.1% vs -50.0%
-Portfolio score vs volatility score (rank corr. with relative drawdown),+0.125 vs +0.168
+Long–short FF3 alpha per year (RandomForest),-2.6% (t = -1.55)
+Removing High level (cap-weighted): exposure,"9.9% to 8.4% (Δ -1.5% [-2.7%, -0.6%])"
+Removing High level (cap-weighted): return per year,"-0.84% [-1.51%, -0.20%]"
+Removing High level (cap-weighted): max drawdown vs control,-51.2% vs -50.0%
+Portfolio score vs volatility score (rank corr. with relative drawdown),+0.126 vs +0.169
